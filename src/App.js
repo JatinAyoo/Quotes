@@ -68,13 +68,17 @@ const App = () => {
         </nav>
         <div className="quote-container">
           <div className="quote-card">
-            <p>{quote}</p>
-            <img
-              src={savedQuotes.includes(quote) ? bookmarkedIcon : bookmarkIcon}
-              alt="Bookmark Icon"
-              className="bookmark-icon"
-              onClick={() => toggleSaveQuote(quote)}
-            />
+            <div className="quote-text">
+              <p>{quote}</p>
+            </div>
+            <div className="bookmark-icon-container">
+              <img
+                src={savedQuotes.includes(quote) ? bookmarkedIcon : bookmarkIcon}
+                alt="Bookmark Icon"
+                className="bookmark-icon"
+                onClick={() => toggleSaveQuote(quote)}
+              />
+            </div>
           </div>
           <button onClick={getNextQuote} className="new-quote-button">New Quote</button>
         </div>
@@ -82,13 +86,17 @@ const App = () => {
           <h2>Saved Quotes</h2>
           {savedQuotes.map((q, index) => (
             <div key={index} className="quote-card">
-              <p>{q}</p>
-              <img
-                src={bookmarkedIcon}
-                alt="Bookmarked Icon"
-                className="bookmark-icon"
-                onClick={() => toggleSaveQuote(q)}
-              />
+              <div className="quote-text">
+                <p>{q}</p>
+              </div>
+              <div className="bookmark-icon-container">
+                <img
+                  src={bookmarkedIcon}
+                  alt="Bookmarked Icon"
+                  className="bookmark-icon"
+                  onClick={() => toggleSaveQuote(q)}
+                />
+              </div>
             </div>
           ))}
         </div>

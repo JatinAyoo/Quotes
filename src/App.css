@@ -47,6 +47,7 @@
   position: relative;
   transition: transform 0.3s ease;
   color: #333;
+  display: flex;
 }
 
 .quote-card:hover {
@@ -58,13 +59,29 @@
   font-size: 1.2em;
 }
 
-.bookmark-icon {
+.quote-text {
+  flex: 1;
+}
+
+/* .bookmark-icon {
   position: absolute;
   top: 30px;
   right: 10px;
   width: 24px;
   height: 24px;
   cursor: pointer;
+} */
+
+.bookmark-icon {
+  margin: 10px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.bookmark-icon-container {
+  flex-shrink: 0; /* Prevent bookmark icon from growing */
+  margin-left: 10px; /* Add space between text and icon */
 }
 
 button {
