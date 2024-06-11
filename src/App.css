@@ -2,37 +2,115 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background: linear-gradient(135deg, beige, lightgray);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #333;
 }
 
-.App-link {
+.navbar {
+  width: 100%;
+  background-color: #20232a;
+  padding: 1rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  margin: 0;
   color: #61dafb;
+  font-size: 1.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.quote-card {
+  background: #fff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 70%;
+  word-wrap: break-word;
+  position: relative;
+  transition: transform 0.3s ease;
+  color: #333;
+}
+
+.quote-card:hover {
+  transform: scale(1.05);
+}
+
+.quote-card p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.bookmark-icon {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+button {
+  background: #61dafb; 
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  /* color: #fff; */
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #21a1f1;
+}
+
+.new-quote-button {
+  margin-top: 20px;
+}
+
+.saved-quotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.saved-quotes h2 {
+  margin-bottom: 10px;
+}
+
+.saved-quotes .quote-card {
+  width: 80%;
+}
+
+/* Make saved-quotes div responsive */
+.saved-quotes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.saved-quotes .quote-card {
+  margin: 10px;
+  flex: 1 0 21%; /* Grow to fill available space, min-width 21% */
 }
